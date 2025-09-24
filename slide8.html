@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results: Total Delay Distribution</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Segoe+UI:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="slide-canvas antialiased bg-gray-50 flex flex-col p-16">
+        <h1 class="text-4xl font-bold text-center" style="color: #003366;">Results: Distribution of Total Delay Across
+            Strategies</h1>
+
+        <div class="flex-grow flex items-center justify-center mt-4 overflow-hidden">
+            <!-- ĐÃ CẬP NHẬT: Thêm class 'object-contain' -->
+            <img src="images/violin-plot-delay.png" alt="Distribution of Total Delay Across Strategies"
+                class="w-full h-full object-contain">
+        </div>
+        <div class="mt-4 text-center p-4 bg-blue-50 rounded-lg w-full max-w-4xl mx-auto">
+            <p class="text-xl text-gray-800">SCA consistently maintains a <strong class="text-blue-600">lower and more
+                    predictable total delay</strong> compared to GREEDY and RANDOM.</p>
+        </div>
+
+        <div class="slide-footer">
+            <div class="w-1/4 text-left">Phuc Hao Do</div>
+            <div class="w-1/2 text-center">Bonch-Bruevich Saint-Petersburg State University of Telecommunications</div>
+            <div id="slide-counter" class="w-1/4 text-right"></div>
+        </div>
+    </div>
+    <a id="prev-slide"
+        class="fixed left-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50"
+        href="#"><i class="fas fa-chevron-left text-6xl"></i></a>
+    <a id="next-slide"
+        class="fixed right-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50"
+        href="#"><i class="fas fa-chevron-right text-6xl"></i></a>
+    <script src="navigation.js" defer></script>
+</body>
+
+</html>

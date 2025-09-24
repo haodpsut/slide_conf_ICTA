@@ -1,0 +1,88 @@
+<!-- SLIDE: Conclusion & Future Work -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conclusion & Future Work</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Segoe+UI:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body> <!-- Thẻ body không còn class -->
+    <div class="slide-canvas antialiased bg-gray-100 flex flex-col justify-center items-center p-12 relative">
+        <h1 class="text-4xl font-bold text-center" style="color: #003366;">Conclusion & Future Work</h1>
+
+        <div class="flex-grow grid grid-cols-2 gap-12 mt-12">
+            <!-- Conclusion -->
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold mb-6 text-center" style="color: #003366;">
+                    <i class="fas fa-check-double mr-3"></i>Conclusion
+                </h2>
+                <ul class="space-y-4 text-lg text-gray-700">
+                    <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1.5 mr-3"></i><span>The
+                            SCA-based client selection method effectively addresses high latency in GEO satellite
+                            networks.</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1.5 mr-3"></i><span>It
+                            achieves high accuracy comparable to baselines while <strong
+                                class="font-semibold">significantly reducing communication delay</strong>.</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1.5 mr-3"></i><span>The
+                            method shows rapid convergence and robustness, making it suitable for real-time applications
+                            like disaster response.</span></li>
+                </ul>
+            </div>
+
+            <!-- Future Work -->
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold mb-6 text-center" style="color: #003366;">
+                    <i class="fas fa-road mr-3"></i>Future Work
+                </h2>
+                <ul class="space-y-4 text-lg text-gray-700">
+                    <li class="flex items-start"><i class="fas fa-cogs text-blue-500 mt-1.5 mr-3"></i><span>Integrate
+                            quantization techniques to further reduce communication overhead.</span></li>
+                    <li class="flex items-start"><i
+                            class="fas fa-satellite text-blue-500 mt-1.5 mr-3"></i><span>Validate the SCA method on
+                            <strong class="font-semibold">real GEO satellite testbeds</strong> under dynamic network
+                            conditions.</span></li>
+                    <li class="flex items-start"><i class="fas fa-atom text-blue-500 mt-1.5 mr-3"></i><span>Explore
+                            quantum-inspired algorithms to enhance the client selection process.</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <!-- Phần tử bên trái -->
+            <div class="w-1/4 text-left">Phuc Hao Do</div>
+
+            <!-- Phần tử ở giữa -->
+            <div class="w-1/2 text-center">Bonch-Bruevich Saint-Petersburg State University of Telecommunications</div>
+
+            <!-- Phần tử bên phải (sẽ được JS điền số trang vào) -->
+            <div id="slide-counter" class="w-1/4 text-right"></div>
+        </div>
+    </div>
+
+    <!-- === BẮT ĐẦU ĐOẠN MÃ THÊM VÀO === -->
+
+    <!-- Các nút điều hướng và script nằm ngoài canvas -->
+    <a id="prev-slide"
+        class="fixed left-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50"
+        href="#">
+        <i class="fas fa-chevron-left text-6xl"></i>
+    </a>
+    <a id="next-slide"
+        class="fixed right-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50"
+        href="#">
+        <i class="fas fa-chevron-right text-6xl"></i>
+    </a>
+    <script src="navigation.js" defer></script>
+
+
+</body>
+
+</html>

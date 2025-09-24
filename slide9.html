@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results: Performance Snapshot</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Segoe+UI:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="slide-canvas antialiased bg-white flex flex-col p-16">
+        <h1 class="text-4xl font-bold" style="color: #003366;">Results: Server Accuracy Snapshot (Radar Chart)</h1>
+        <div class="flex-grow grid grid-cols-2 gap-8 items-center mt-4">
+            <div class="h-full flex items-center justify-center overflow-hidden">
+                <!-- ĐÃ CẬP NHẬT: Thêm class 'object-contain' -->
+                <img src="images/radar-chart-accuracy.png" alt="Server Accuracy Across Selected Rounds Radar Chart"
+                    class="w-full h-full object-contain">
+            </div>
+            <div class="space-y-6">
+                <h2 class="text-3xl font-bold" style="color: #003366;">Analysis</h2>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-bold text-lg text-gray-700">Early Rounds (1, 10)</h3>
+                    <p class="text-gray-700">SCA (blue) shows a clear accuracy advantage in the beginning, demonstrating
+                        a strong start.</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-bold text-lg text-gray-700">Mid-to-Late Rounds (20-50)</h3>
+                    <p class="text-gray-700">All strategies eventually converge, with their performance areas largely
+                        overlapping by the end of training.</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-bold text-lg text-gray-700">Overall Implication</h3>
+                    <p class="text-gray-700">The primary benefit of SCA is achieving high accuracy <span
+                            class="font-bold">faster</span>, which is crucial in latency-sensitive environments.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <div class="w-1/4 text-left">Phuc Hao Do</div>
+            <div class="w-1/2 text-center">Bonch-Bruevich Saint-Petersburg State University of Telecommunications</div>
+            <div id="slide-counter" class="w-1/4 text-right"></div>
+        </div>
+    </div>
+    <a id="prev-slide"
+        class="fixed left-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50"
+        href="#"><i class="fas fa-chevron-left text-6xl"></i></a>
+    <a id="next-slide"
+        class="fixed right-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50"
+        href="#"><i class="fas fa-chevron-right text-6xl"></i></a>
+    <script src="navigation.js" defer></script>
+</body>
+
+</html>

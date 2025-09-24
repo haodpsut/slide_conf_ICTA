@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results: Accuracy vs. Delay</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Segoe+UI:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="slide-canvas antialiased bg-white flex flex-col p-16">
+        <h1 class="text-4xl font-bold" style="color: #003366;">Results: Balancing Accuracy with Delay</h1>
+        <p class="text-xl text-gray-600 mt-2">SCA achieves high accuracy (>90%) with significantly lower communication
+            delay.</p>
+
+        <div class="flex-grow grid grid-cols-3 gap-6 items-center mt-4">
+            <div class="text-center h-full flex flex-col">
+                <h2 class="text-2xl font-bold mb-2" style="color: #2196F3;">SCA</h2>
+                <!-- ĐÃ CẬP NHẬT: Thêm flex-grow và overflow-hidden cho container -->
+                <div class="flex-grow overflow-hidden">
+                    <img src="images/contour-sca.png" alt="Accuracy vs. Delay for SCA"
+                        class="w-full h-full object-contain rounded-lg">
+                </div>
+                <p class="mt-2 text-lg text-gray-700">High accuracy at lower delay (< 250ms).</p>
+            </div>
+            <div class="text-center h-full flex flex-col">
+                <h2 class="text-2xl font-bold mb-2 text-green-600">GREEDY</h2>
+                <div class="flex-grow overflow-hidden">
+                    <img src="images/contour-greedy.png" alt="Accuracy vs. Delay for GREEDY"
+                        class="w-full h-full object-contain rounded-lg">
+                </div>
+                <p class="mt-2 text-lg text-gray-700">High accuracy at a higher delay cost (300-400ms).</p>
+            </div>
+            <div class="text-center h-full flex flex-col">
+                <h2 class="text-2xl font-bold mb-2 text-red-600">RANDOM</h2>
+                <div class="flex-grow overflow-hidden">
+                    <img src="images/contour-random.png" alt="Accuracy vs. Delay for RANDOM"
+                        class="w-full h-full object-contain rounded-lg">
+                </div>
+                <p class="mt-2 text-lg text-gray-700">Scattered performance; high delays (> 600ms) are common.</p>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <div class="w-1/4 text-left">Phuc Hao Do</div>
+            <div class="w-1/2 text-center">Bonch-Bruevich Saint-Petersburg State University of Telecommunications</div>
+            <div id="slide-counter" class="w-1/4 text-right"></div>
+        </div>
+    </div>
+    <a id="prev-slide"
+        class="fixed left-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50"
+        href="#"><i class="fas fa-chevron-left text-6xl"></i></a>
+    <a id="next-slide"
+        class="fixed right-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50"
+        href="#"><i class="fas fa-chevron-right text-6xl"></i></a>
+    <script src="navigation.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!-- SLIDE: Experimental Setup -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experimental Setup</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Segoe+UI:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body> <!-- Thẻ body không còn class -->
+    <div class="slide-canvas antialiased bg-gray-100 flex flex-col justify-center items-center p-12 relative">
+        <h1 class="text-4xl font-bold" style="color: #003366;">Experimental Setup</h1>
+        <div class="w-24 h-1.5 mt-3" style="background-color: #2196F3;"></div>
+
+        <div class="flex-grow grid grid-cols-2 gap-10 mt-8">
+            <div class="space-y-6">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="text-xl font-bold" style="color: #003366;"><i class="fas fa-database mr-3"></i>Dataset
+                    </h3>
+                    <p class="text-lg text-gray-700">MNIST, partitioned across 10 clients with non-IID data
+                        distributions (500-2000 samples each).</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="text-xl font-bold" style="color: #003366;"><i class="fas fa-network-wired mr-3"></i>GEO
+                        Network Model</h3>
+                    <p class="text-lg text-gray-700">Simulated central server with 10 clients. Communication latency
+                        sampled uniformly from [100, 500]ms.</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="text-xl font-bold" style="color: #003366;"><i class="fas fa-brain mr-3"></i>FL Model</h3>
+                    <p class="text-lg text-gray-700">CNN with 2 convolutional and 2 fully connected layers, trained via
+                        FedAvg over 50 rounds.</p>
+                </div>
+            </div>
+            <div class="bg-blue-50 p-8 rounded-lg flex flex-col justify-center">
+                <h2 class="text-3xl font-bold text-center mb-6" style="color: #003366;">Compared Strategies</h2>
+                <div class="space-y-6">
+                    <div class="p-4 bg-white rounded-lg shadow">
+                        <h3 class="text-xl font-bold" style="color: #2196F3;">SCA (Proposed)</h3>
+                        <p class="text-lg text-gray-700">Balances accuracy, bandwidth, and delay.</p>
+                    </div>
+                    <div class="p-4 bg-white rounded-lg shadow">
+                        <h3 class="text-xl font-bold text-green-600">GREEDY</h3>
+                        <p class="text-lg text-gray-700">Selects clients with the highest accuracy only.</p>
+                    </div>
+                    <div class="p-4 bg-white rounded-lg shadow">
+                        <h3 class="text-xl font-bold text-red-600">RANDOM</h3>
+                        <p class="text-lg text-gray-700">Selects clients randomly, ignoring all metrics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <!-- Phần tử bên trái -->
+            <div class="w-1/4 text-left">Phuc Hao Do</div>
+
+            <!-- Phần tử ở giữa -->
+            <div class="w-1/2 text-center">Bonch-Bruevich Saint-Petersburg State University of Telecommunications</div>
+
+            <!-- Phần tử bên phải (sẽ được JS điền số trang vào) -->
+            <div id="slide-counter" class="w-1/4 text-right"></div>
+        </div>
+    </div>
+
+    <!-- Các nút điều hướng và script nằm ngoài canvas -->
+    <a id="prev-slide"
+        class="fixed left-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50"
+        href="#">
+        <i class="fas fa-chevron-left text-6xl"></i>
+    </a>
+    <a id="next-slide"
+        class="fixed right-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50"
+        href="#">
+        <i class="fas fa-chevron-right text-6xl"></i>
+    </a>
+    <script src="navigation.js" defer></script>
+
+</body>
+
+</html>

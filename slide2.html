@@ -1,0 +1,84 @@
+<!-- SLIDE: Introduction & Problem Statement -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction & Problem Statement</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Segoe+UI:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body> <!-- Thẻ body không còn class -->
+    <div class="slide-canvas antialiased bg-gray-100 flex flex-col justify-center items-center p-12 relative">
+
+        <h1 class="text-4xl font-bold" style="color: #003366;">Introduction: The Challenge</h1>
+        <div class="w-24 h-1.5 mt-3" style="background-color: #2196F3;"></div>
+
+        <div class="flex-grow grid grid-cols-2 gap-12 items-center mt-8">
+            <div class="bg-gray-50 p-8 rounded-lg">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center"><i
+                        class="fas fa-satellite-dish text-3xl mr-4" style="color: #2196F3;"></i>Federated Learning (FL)
+                </h2>
+                <ul class="space-y-3 text-lg text-gray-700">
+                    <li class="flex"><i class="fas fa-check-circle text-green-500 mt-1.5 mr-3"></i><span>Enables
+                            collaborative model training on decentralized data.</span></li>
+                    <li class="flex"><i class="fas fa-check-circle text-green-500 mt-1.5 mr-3"></i><span>Preserves data
+                            privacy by keeping data local.</span></li>
+                    <li class="flex"><i class="fas fa-check-circle text-green-500 mt-1.5 mr-3"></i><span>Reduces
+                            bandwidth needs by only sharing model updates.</span></li>
+                </ul>
+            </div>
+            <div class="bg-red-50 p-8 rounded-lg border-l-4 border-red-500">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center"><i
+                        class="fas fa-exclamation-triangle text-3xl mr-4 text-red-500"></i>The GEO Satellite Problem
+                </h2>
+                <ul class="space-y-3 text-lg text-gray-700">
+                    <li class="flex"><i class="fas fa-stopwatch text-red-500 mt-1.5 mr-3"></i><span><strong>High
+                                Latency:</strong> >500ms round-trip delays hinder frequent updates.</span></li>
+                    <li class="flex"><i class="fas fa-wifi text-red-500 mt-1.5 mr-3"></i><span><strong>Limited
+                                Bandwidth:</strong> Constrains the size and frequency of model exchanges.</span></li>
+                    <li class="flex"><i class="fas fa-sync-alt text-red-500 mt-1.5 mr-3"></i><span><strong>Slow
+                                Convergence:</strong> Delays and bandwidth issues can stall model training.</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-8 text-center p-4 bg-blue-50 rounded-lg">
+            <h3 class="text-2xl font-bold" style="color: #003366;">Research Question:</h3>
+            <p class="text-xl text-gray-700 mt-2">How can we intelligently select clients in a GEO network to minimize
+                latency while maximizing model accuracy and convergence speed?</p>
+        </div>
+
+        <div class="slide-footer">
+            <!-- Phần tử bên trái -->
+            <div class="w-1/4 text-left">Phuc Hao Do</div>
+
+            <!-- Phần tử ở giữa -->
+            <div class="w-1/2 text-center">Bonch-Bruevich Saint-Petersburg State University of Telecommunications</div>
+
+            <!-- Phần tử bên phải (sẽ được JS điền số trang vào) -->
+            <div id="slide-counter" class="w-1/4 text-right"></div>
+        </div>
+    </div>
+
+    <!-- Các nút điều hướng và script nằm ngoài canvas -->
+    <a id="prev-slide"
+        class="fixed left-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50"
+        href="#">
+        <i class="fas fa-chevron-left text-6xl"></i>
+    </a>
+    <a id="next-slide"
+        class="fixed right-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50"
+        href="#">
+        <i class="fas fa-chevron-right text-6xl"></i>
+    </a>
+    <script src="navigation.js" defer></script>
+
+</body>
+
+</html>

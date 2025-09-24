@@ -1,0 +1,50 @@
+/* File: css/style.css */
+
+/* --- Cài đặt Toàn cục & Căn giữa Slide --- */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* Sử dụng flexbox để căn giữa canvas slide */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Nền tối để slide nổi bật */
+    background-color: #333; 
+}
+
+/* --- Font chữ cho các tiêu đề --- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* --- Định dạng Canvas chính của Slide --- */
+.slide-canvas {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    position: relative; /* Quan trọng để định vị footer và các phần tử khác */
+    background-color: #fff; /* Nền trắng mặc định cho nội dung slide */
+    
+    /* Hiệu ứng đổ bóng tinh tế */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* --- Footer chung cho tất cả các slide --- */
+.slide-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #003366; /* UW-Stout Navy */
+    color: white;
+    padding: 8px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem; /* 14px */
+}
