@@ -21,17 +21,17 @@
                 <div>
                     <h2 class="text-2xl font-bold text-gray-800 mb-3"><i class="fas fa-cogs mr-3"></i>Training Procedure</h2>
                     <ul class="space-y-2 text-lg text-gray-700 list-disc list-inside">
-                        <li>**Optimizer:** AdamW (lr=0.001, wd=10<sup>-5</sup>)</li>
-                        <li>**Learning Rate Scheduler:** Cosine Annealing</li>
-                        <li>**Regularization:** Dropout (0.3), Early Stopping (patience=5)</li>
-                        <li>**Validation:** 10-fold Cross-Validation for robustness</li>
+                        <li><strong>Optimizer:</strong> AdamW (lr=0.001, wd=10<sup>-5</sup>)</li>
+                        <li><strong>Learning Rate Scheduler:</strong> Cosine Annealing</li>
+                        <li><strong>Regularization:</strong> Dropout (0.3), Early Stopping (patience=5)</li>
+                        <li><strong>Validation:</strong> 10-fold Cross-Validation for robustness</li>
                     </ul>
                 </div>
                 <div>
                     <h2 class="text-2xl font-bold text-gray-800 mb-3"><i class="fas fa-balance-scale mr-3"></i>Evaluation Metrics</h2>
                      <ul class="space-y-2 text-lg text-gray-700 list-disc list-inside">
-                        <li>**Primary:** ROC-AUC</li>
-                        <li>**Secondary:** Accuracy (%), F1-Score</li>
+                        <li><strong>Primary:</strong> ROC-AUC</li>
+                        <li><strong>Secondary:</strong> Accuracy (%), F1-Score</li>
                     </ul>
                 </div>
             </div>
@@ -43,15 +43,15 @@
                 <div class="space-y-4">
                     <div class="flex items-center text-lg">
                         <i class="fas fa-wind text-2xl text-yellow-600 w-8"></i>
-                        <span>**Gaussian Blur** (σ = 1-3)</span>
+                        <span><em class="italic">Gaussian Blur</em> (σ = 1-3)</span>
                     </div>
                     <div class="flex items-center text-lg">
                         <i class="fas fa-compress-alt text-2xl text-yellow-600 w-8"></i>
-                        <span>**JPEG Compression** (quality = 20-50)</span>
+                        <span><em class="italic">JPEG Compression</em> (quality = 20-50)</span>
                     </div>
                     <div class="flex items-center text-lg">
                         <i class="fas fa-sync-alt text-2xl text-yellow-600 w-8"></i>
-                        <span>**Rotation** (±10°)</span>
+                        <span><em class="italic">Rotation</em> (±10°)</span>
                     </div>
                 </div>
                  <p class="mt-6 text-lg text-gray-800">The goal is to ensure accuracy degradation (Δ<sub>acc</sub>) is minimal (≤ 15%).</p>
