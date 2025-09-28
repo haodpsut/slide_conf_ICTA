@@ -1,58 +1,56 @@
-<!-- SLIDE: Q&A / Thank You -->
+<!-- SLIDE: Conclusion -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Q&A / Thank You</title>
+    <title>Conclusion</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Segoe+UI:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
+<body>
+    <div class="slide-canvas antialiased bg-white flex flex-col p-12 relative">
+        <h1 class="text-4xl font-bold text-center" style="color: #003366;">Conclusion</h1>
+        <div class="w-24 h-1.5 mt-3 mx-auto" style="background-color: #2196F3;"></div>
 
-<body> <!-- Thẻ body không còn class -->
-    <div class="slide-canvas antialiased bg-gray-100 flex flex-col justify-center items-center p-12 relative">
+        <div class="flex-grow flex flex-col justify-center items-center mt-8 space-y-10">
+            <div class="w-full max-w-4xl bg-green-50 p-8 rounded-lg border-l-4 border-green-500">
+                <h2 class="text-3xl font-bold text-green-800 mb-4">Key Contribution</h2>
+                <p class="text-2xl text-gray-700">
+                    This study successfully demonstrates that a **Residual CNN** is highly effective for robust quishing detection on low-resolution (69x69) QR codes, achieving a state-of-the-art **ROC-AUC of 0.9313**.
+                </p>
+            </div>
+            
+            <div class="w-full max-w-4xl grid grid-cols-2 gap-8 text-xl">
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <h3 class="font-bold mb-2 flex items-center"><i class="fas fa-check-circle text-blue-500 mr-3"></i>Superior Performance</h3>
+                    <p>Residual CNN outperforms Vanilla CNN, XGBoost, and the existing baseline in both accuracy and stability.</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <h3 class="font-bold mb-2 flex items-center"><i class="fas fa-shield-alt text-blue-500 mr-3"></i>Enhanced Robustness</h3>
+                    <p>The model maintains high performance under common image distortions, making it suitable for real-world deployment.</p>
+                </div>
+            </div>
 
-        <div class="flex flex-col items-center">
-            <h1 class="text-8xl font-bold" style="color: #003366;">Thank You</h1>
-            <div class="w-48 h-1.5 my-8" style="background-color: #003366;"></div>
-            <h2 class="text-5xl text-gray-700">Questions?</h2>
-            <div class="mt-16 text-2xl text-gray-500">
-                <p><i class="fas fa-envelope mr-3"></i>do.hf@sut.ru</p>
+            <div class="w-full max-w-4xl">
+                 <h2 class="text-2xl font-bold text-center text-gray-800 mb-4">Future Work</h2>
+                 <ul class="text-center text-lg space-y-2">
+                     <li>Extend evaluation across more diverse datasets.</li>
+                     <li>Explore multi-modal fusion strategies for even greater accuracy.</li>
+                 </ul>
             </div>
         </div>
-
+        
         <div class="slide-footer">
-            <!-- Phần tử bên trái -->
-            <div class="w-1/4 text-left">Phuc Hao Do</div>
-
-            <!-- Phần tử ở giữa -->
-            <div class="w-1/2 text-center">Bonch-Bruevich Saint-Petersburg State University of Telecommunications</div>
-
-            <!-- Phần tử bên phải (sẽ được JS điền số trang vào) -->
+            <div class="w-1/4 text-left">Robust Quishing Detection</div>
+            <div class="w-1/2 text-center">Conference Presentation</div>
             <div id="slide-counter" class="w-1/4 text-right"></div>
         </div>
     </div>
-
-    <!-- === BẮT ĐẦU ĐOẠN MÃ THÊM VÀO === -->
-
-    <!-- Các nút điều hướng và script nằm ngoài canvas -->
-    <a id="prev-slide"
-        class="fixed left-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50"
-        href="#">
-        <i class="fas fa-chevron-left text-6xl"></i>
-    </a>
-    <a id="next-slide"
-        class="fixed right-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50"
-        href="#">
-        <i class="fas fa-chevron-right text-6xl"></i>
-    </a>
+    <a id="prev-slide" class="nav-button left-0"><i class="fas fa-chevron-left"></i></a>
+    <a id="next-slide" class="nav-button right-0"><i class="fas fa-chevron-right"></i></a>
     <script src="navigation.js" defer></script>
-
 </body>
-
 </html>

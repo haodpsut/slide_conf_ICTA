@@ -7,40 +7,31 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
-    /* Sử dụng flexbox để căn giữa canvas slide */
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* Nền tối để slide nổi bật */
     background-color: #333; 
 }
 
-/* --- Font chữ cho các tiêu đề --- */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* --- Định dạng Canvas chính của Slide --- */
 .slide-canvas {
     width: 1280px;
     height: 720px;
     overflow: hidden;
-    position: relative; /* Quan trọng để định vị footer và các phần tử khác */
-    background-color: #fff; /* Nền trắng mặc định cho nội dung slide */
-    
-    /* Hiệu ứng đổ bóng tinh tế */
+    position: relative;
+    background-color: #fff;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-/* --- Footer chung cho tất cả các slide --- */
 .slide-footer {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #003366; /* UW-Stout Navy */
+    background-color: #003366;
     color: white;
     padding: 8px 24px;
     display: flex;
@@ -48,3 +39,21 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     font-size: 0.875rem; /* 14px */
 }
+
+.nav-button {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 1.5rem; /* 24px */
+    color: transparent;
+    transition: color 0.3s ease-in-out;
+    z-index: 50;
+    font-size: 4rem; /* 64px */
+}
+
+.nav-button:hover {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-button.left-0 { left: 0; }
+.nav-button.right-0 { right: 0; }

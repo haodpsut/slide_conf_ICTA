@@ -1,60 +1,77 @@
+<!-- SLIDE: Results - Performance -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Results: Performance Snapshot</title>
+    <title>Results: Performance Comparison</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Segoe+UI:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <div class="slide-canvas antialiased bg-white flex flex-col p-16">
-        <h1 class="text-4xl font-bold" style="color: #003366;">Results: Server Accuracy Snapshot (Radar Chart)</h1>
-        <div class="flex-grow grid grid-cols-2 gap-8 items-center mt-4">
-            <div class="h-full flex items-center justify-center overflow-hidden">
-                <!-- ĐÃ CẬP NHẬT: Thêm class 'object-contain' -->
-                <img src="images/radar-chart-accuracy.png" alt="Server Accuracy Across Selected Rounds Radar Chart"
-                    class="w-full h-full object-contain">
+    <div class="slide-canvas antialiased bg-white flex flex-col p-12 relative">
+        <h1 class="text-4xl font-bold text-center" style="color: #003366;">Results: Performance Comparison</h1>
+        <div class="w-24 h-1.5 mt-3 mx-auto" style="background-color: #2196F3;"></div>
+        
+        <div class="flex-grow flex flex-col justify-center items-center mt-8">
+            <p class="text-xl text-gray-600 mb-6 text-center">Performance metrics based on 10-fold cross-validation.</p>
+            
+            <div class="w-full max-w-4xl">
+                <!-- Table Header -->
+                <div class="grid grid-cols-4 gap-4 text-center font-bold text-lg p-4 bg-gray-200 rounded-t-lg">
+                    <div>Model</div>
+                    <div>Accuracy (%)</div>
+                    <div>ROC-AUC</div>
+                    <div>F1-Score</div>
+                </div>
+                
+                <!-- Table Body -->
+                <div class="text-lg text-center space-y-2">
+                    <div class="grid grid-cols-4 gap-4 p-4 bg-gray-50">
+                        <div>Baseline (XGBoost) [1]</div>
+                        <div>91.33</div>
+                        <div>0.9133</div>
+                        <div>0.91</div>
+                    </div>
+                    <div class="grid grid-cols-4 gap-4 p-4 bg-red-50">
+                        <div>Vanilla CNN</div>
+                        <div>88.5 ± 1.2</div>
+                        <div>0.8900</div>
+                        <div>0.88</div>
+                    </div>
+                    <div class="grid grid-cols-4 gap-4 p-4 bg-green-100 border-2 border-green-500 rounded-lg font-bold">
+                        <div><i class="fas fa-star text-yellow-500 mr-2"></i>Residual CNN</div>
+                        <div>93.0 ± 0.8</div>
+                        <div>0.9313</div>
+                        <div>0.92</div>
+                    </div>
+                     <div class="grid grid-cols-4 gap-4 p-4 bg-gray-50 rounded-b-lg">
+                        <div>Our XGBoost</div>
+                        <div>91.2 ± 1.0</div>
+                        <div>0.9158</div>
+                        <div>0.91</div>
+                    </div>
+                </div>
             </div>
-            <div class="space-y-6">
-                <h2 class="text-3xl font-bold" style="color: #003366;">Analysis</h2>
-                <div class="bg-gray-50 p-4 rounded-lg">
-                    <h3 class="font-bold text-lg text-gray-700">Early Rounds (1, 10)</h3>
-                    <p class="text-gray-700">SCA (blue) shows a clear accuracy advantage in the beginning, demonstrating
-                        a strong start.</p>
-                </div>
-                <div class="bg-gray-50 p-4 rounded-lg">
-                    <h3 class="font-bold text-lg text-gray-700">Mid-to-Late Rounds (20-50)</h3>
-                    <p class="text-gray-700">All strategies eventually converge, with their performance areas largely
-                        overlapping by the end of training.</p>
-                </div>
-                <div class="bg-gray-50 p-4 rounded-lg">
-                    <h3 class="font-bold text-lg text-gray-700">Overall Implication</h3>
-                    <p class="text-gray-700">The primary benefit of SCA is achieving high accuracy <span
-                            class="font-bold">faster</span>, which is crucial in latency-sensitive environments.</p>
-                </div>
+            
+            <div class="mt-10 w-full max-w-4xl p-6 bg-blue-50 rounded-lg text-center">
+                <h3 class="text-2xl font-bold" style="color: #003366;">Key Findings</h3>
+                <p class="text-xl text-gray-700 mt-2">
+                    <strong class="text-green-600">Residual CNN</strong> significantly outperforms all other models, achieving the highest ROC-AUC (0.9313) and meeting our target. It surpasses the baseline by 1.97%.
+                </p>
             </div>
         </div>
 
         <div class="slide-footer">
-            <div class="w-1/4 text-left">Phuc Hao Do</div>
-            <div class="w-1/2 text-center">Bonch-Bruevich Saint-Petersburg State University of Telecommunications</div>
+            <div class="w-1/4 text-left">Robust Quishing Detection</div>
+            <div class="w-1/2 text-center">Conference Presentation</div>
             <div id="slide-counter" class="w-1/4 text-right"></div>
         </div>
     </div>
-    <a id="prev-slide"
-        class="fixed left-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50"
-        href="#"><i class="fas fa-chevron-left text-6xl"></i></a>
-    <a id="next-slide"
-        class="fixed right-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50"
-        href="#"><i class="fas fa-chevron-right text-6xl"></i></a>
+    <a id="prev-slide" class="nav-button left-0"><i class="fas fa-chevron-left"></i></a>
+    <a id="next-slide" class="nav-button right-0"><i class="fas fa-chevron-right"></i></a>
     <script src="navigation.js" defer></script>
 </body>
-
 </html>

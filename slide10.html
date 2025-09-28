@@ -1,88 +1,49 @@
-<!-- SLIDE: Conclusion & Future Work -->
+<!-- SLIDE: Results Visualizations -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conclusion & Future Work</title>
+    <title>Results: Visualizations</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Segoe+UI:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
+<body>
+    <div class="slide-canvas antialiased bg-white flex flex-col p-12 relative">
+        <h1 class="text-4xl font-bold text-center" style="color: #003366;">Results: Visualizations</h1>
+        <div class="w-24 h-1.5 mt-3 mx-auto" style="background-color: #2196F3;"></div>
 
-<body> <!-- Thẻ body không còn class -->
-    <div class="slide-canvas antialiased bg-gray-100 flex flex-col justify-center items-center p-12 relative">
-        <h1 class="text-4xl font-bold text-center" style="color: #003366;">Conclusion & Future Work</h1>
-
-        <div class="flex-grow grid grid-cols-2 gap-12 mt-12">
-            <!-- Conclusion -->
-            <div class="bg-white p-8 rounded-lg shadow-lg">
-                <h2 class="text-3xl font-bold mb-6 text-center" style="color: #003366;">
-                    <i class="fas fa-check-double mr-3"></i>Conclusion
-                </h2>
-                <ul class="space-y-4 text-lg text-gray-700">
-                    <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1.5 mr-3"></i><span>The
-                            SCA-based client selection method effectively addresses high latency in GEO satellite
-                            networks.</span></li>
-                    <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1.5 mr-3"></i><span>It
-                            achieves high accuracy comparable to baselines while <strong
-                                class="font-semibold">significantly reducing communication delay</strong>.</span></li>
-                    <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1.5 mr-3"></i><span>The
-                            method shows rapid convergence and robustness, making it suitable for real-time applications
-                            like disaster response.</span></li>
-                </ul>
+        <div class="flex-grow grid grid-cols-2 gap-10 items-center mt-8">
+            <!-- Left Column: Figure 2 -->
+            <div class="text-center">
+                <img src="images/figure2.png" alt="Performance and robustness visualizations" class="rounded-lg shadow-lg mx-auto w-full object-contain">
+                <p class="text-center text-gray-600 mt-2 text-lg">Fig. 2: Performance and robustness visualizations.</p>
             </div>
 
-            <!-- Future Work -->
-            <div class="bg-white p-8 rounded-lg shadow-lg">
-                <h2 class="text-3xl font-bold mb-6 text-center" style="color: #003366;">
-                    <i class="fas fa-road mr-3"></i>Future Work
-                </h2>
-                <ul class="space-y-4 text-lg text-gray-700">
-                    <li class="flex items-start"><i class="fas fa-cogs text-blue-500 mt-1.5 mr-3"></i><span>Integrate
-                            quantization techniques to further reduce communication overhead.</span></li>
-                    <li class="flex items-start"><i
-                            class="fas fa-satellite text-blue-500 mt-1.5 mr-3"></i><span>Validate the SCA method on
-                            <strong class="font-semibold">real GEO satellite testbeds</strong> under dynamic network
-                            conditions.</span></li>
-                    <li class="flex items-start"><i class="fas fa-atom text-blue-500 mt-1.5 mr-3"></i><span>Explore
-                            quantum-inspired algorithms to enhance the client selection process.</span></li>
-                </ul>
+            <!-- Right Column: Key Insights -->
+            <div class="space-y-8">
+                <h2 class="text-3xl font-bold text-gray-800">Key Insights from Visuals</h2>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-bold mb-3 text-xl flex items-center"><i class="fas fa-chart-bar text-green-500 mr-3 text-2xl"></i>Consistent Performance (Box Plot)</h3>
+                    <p class="text-lg text-gray-700">Residual CNN not only has the highest median ROC-AUC, but also the smallest variance (narrow box), indicating stable and reliable performance.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-bold mb-3 text-xl flex items-center"><i class="fas fa-shield-alt text-green-500 mr-3 text-2xl"></i>Superior Robustness (Violin Plot)</h3>
+                    <p class="text-lg text-gray-700">Under perturbations (blur, compression), the accuracy distribution for Residual CNN is more compact and centered at a higher value (~90%) compared to other models.</p>
+                </div>
             </div>
         </div>
-
+        
         <div class="slide-footer">
-            <!-- Phần tử bên trái -->
-            <div class="w-1/4 text-left">Phuc Hao Do</div>
-
-            <!-- Phần tử ở giữa -->
-            <div class="w-1/2 text-center">Bonch-Bruevich Saint-Petersburg State University of Telecommunications</div>
-
-            <!-- Phần tử bên phải (sẽ được JS điền số trang vào) -->
+            <div class="w-1/4 text-left">Robust Quishing Detection</div>
+            <div class="w-1/2 text-center">Conference Presentation</div>
             <div id="slide-counter" class="w-1/4 text-right"></div>
         </div>
     </div>
-
-    <!-- === BẮT ĐẦU ĐOẠN MÃ THÊM VÀO === -->
-
-    <!-- Các nút điều hướng và script nằm ngoài canvas -->
-    <a id="prev-slide"
-        class="fixed left-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50"
-        href="#">
-        <i class="fas fa-chevron-left text-6xl"></i>
-    </a>
-    <a id="next-slide"
-        class="fixed right-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50"
-        href="#">
-        <i class="fas fa-chevron-right text-6xl"></i>
-    </a>
+    <a id="prev-slide" class="nav-button left-0"><i class="fas fa-chevron-left"></i></a>
+    <a id="next-slide" class="nav-button right-0"><i class="fas fa-chevron-right"></i></a>
     <script src="navigation.js" defer></script>
-
-
 </body>
-
 </html>

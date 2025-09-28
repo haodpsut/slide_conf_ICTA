@@ -1,61 +1,60 @@
+<!-- SLIDE: Feature Pipeline -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Results: Server Accuracy Over Rounds</title>
+    <title>Methodology: Feature Pipeline for XGBoost</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Segoe+UI:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <div class="slide-canvas antialiased bg-gray-50 flex flex-col p-16">
-        <h1 class="text-4xl font-bold" style="color: #003366;">Results: Server Accuracy Over Rounds</h1>
+    <div class="slide-canvas antialiased bg-white flex flex-col p-12 relative">
+        <h1 class="text-4xl font-bold text-center" style="color: #003366;">Methodology: Feature Pipeline for XGBoost</h1>
+        <div class="w-24 h-1.5 mt-3 mx-auto" style="background-color: #2196F3;"></div>
 
-        <div class="flex-grow grid grid-cols-5 gap-8 items-center mt-4">
-            <div class="col-span-3 h-full flex items-center justify-center overflow-hidden">
-                <!-- ĐÃ CẬP NHẬT: Thêm class 'object-contain' -->
-                <img src="images/line-plot-accuracy.png" alt="Server Accuracy Over Rounds Line Plot"
-                    class="w-full h-full object-contain">
+        <div class="flex-grow grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch mt-10">
+            <!-- Image-Based Features -->
+            <div class="flex flex-col bg-gray-50 rounded-lg p-6 border-t-4 border-blue-400">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center"><i class="fas fa-image text-3xl mr-3 text-blue-400"></i>Image-Based</h2>
+                <div class="flex-grow space-y-3 text-lg text-gray-700">
+                    <p><strong>Morphological:</strong> Finder pattern ratio, module density.</p>
+                    <p><strong>Texture:</strong> HOG (Histogram of Oriented Gradients) and LBP (Local Binary Patterns) features.</p>
+                </div>
             </div>
-            <div class="col-span-2 space-y-6">
-                <h2 class="text-3xl font-bold" style="color: #003366;">Key Takeaways</h2>
-                <div class="bg-white p-4 rounded-lg shadow-md border-l-4 border-blue-500">
-                    <h3 class="font-bold text-lg text-blue-700">Faster Initial Convergence</h3>
-                    <p class="text-gray-700">SCA (blue) achieves higher accuracy in early rounds, indicating more
-                        efficient initial learning.</p>
+            <!-- QR Metadata -->
+            <div class="flex flex-col bg-gray-50 rounded-lg p-6 border-t-4 border-yellow-500">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center"><i class="fas fa-cogs text-3xl mr-3 text-yellow-500"></i>QR Metadata</h2>
+                <div class="flex-grow space-y-3 text-lg text-gray-700">
+                    <p><strong>Version:</strong> QR code version (1-40).</p>
+                    <p><strong>Error Correction:</strong> Level (L, M, Q, H).</p>
+                    <p><strong>Pixel Variance:</strong> Statistical properties of the image.</p>
                 </div>
-                <div class="bg-white p-4 rounded-lg shadow-md border-l-4 border-gray-500">
-                    <h3 class="font-bold text-lg text-gray-700">Comparable Final Performance</h3>
-                    <p class="text-gray-700">All three strategies converge to a similar high accuracy (~98%) by round
-                        50.</p>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow-md border-l-4 border-red-500">
-                    <h3 class="font-bold text-lg text-red-700">Inefficient Baselines</h3>
-                    <p class="text-gray-700">GREEDY and RANDOM show much slower starts, wasting valuable initial
-                        training time.</p>
+            </div>
+            <!-- URL-Based Features -->
+            <div class="flex flex-col bg-gray-50 rounded-lg p-6 border-t-4 border-green-500">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center"><i class="fas fa-link text-3xl mr-3 text-green-500"></i>URL-Based (Optional)</h2>
+                <div class="flex-grow space-y-3 text-lg text-gray-700">
+                    <p><em>(Extracted in a safe, sandboxed environment)</em></p>
+                    <p><strong>Properties:</strong> URL length, entropy, domain age, TLD encoding.</p>
                 </div>
             </div>
         </div>
 
+        <div class="mt-10 text-center p-4 bg-blue-50 rounded-lg">
+            <p class="text-xl text-gray-800">Features are Z-score normalized and reduced using PCA to ~100 dimensions, retaining 95% variance.</p>
+        </div>
+        
         <div class="slide-footer">
-            <div class="w-1/4 text-left">Phuc Hao Do</div>
-            <div class="w-1/2 text-center">Bonch-Bruevich Saint-Petersburg State University of Telecommunications</div>
+            <div class="w-1/4 text-left">Robust Quishing Detection</div>
+            <div class="w-1/2 text-center">Conference Presentation</div>
             <div id="slide-counter" class="w-1/4 text-right"></div>
         </div>
     </div>
-    <a id="prev-slide"
-        class="fixed left-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50"
-        href="#"><i class="fas fa-chevron-left text-6xl"></i></a>
-    <a id="next-slide"
-        class="fixed right-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50"
-        href="#"><i class="fas fa-chevron-right text-6xl"></i></a>
+    <a id="prev-slide" class="nav-button left-0"><i class="fas fa-chevron-left"></i></a>
+    <a id="next-slide" class="nav-button right-0"><i class="fas fa-chevron-right"></i></a>
     <script src="navigation.js" defer></script>
 </body>
-
 </html>

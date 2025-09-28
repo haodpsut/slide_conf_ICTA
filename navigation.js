@@ -1,24 +1,33 @@
-// File: navigation.js (Phiên bản cuối cùng)
+// File: navigation.js
 
 document.addEventListener('DOMContentLoaded', () => {
+    // IMPORTANT: Update this list with all your slide HTML files in order.
     const slides = [
-        'index.html', 'slide2.html', 'slide3.html', 'slide4.html',
-        'slide5.html', 'slide6.html', 'slide7.html', 'slide8.html',
-        'slide9.html', 'slide10.html', 'slide11.html'
+        'index.html', 
+        'slide2.html', 
+        'slide3.html', 
+        'slide4.html',
+        'slide5.html', 
+        'slide6.html', 
+        'slide7.html', 
+        'slide8.html',
+        'slide9.html', 
+        'slide10.html', 
+        'slide11.html',
+        'slide12.html'
     ];
 
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const currentIndex = slides.indexOf(currentPage);
 
-    // Cập nhật số trang, NHƯNG chỉ khi không phải là slide đầu tiên (currentIndex > 0)
+    // Update slide counter
     const counterElement = document.getElementById('slide-counter');
-    if (counterElement && currentIndex > 0) {
-        counterElement.textContent = `${currentIndex} / ${slides.length - 1}`;
-        // Thay đổi logic hiển thị: Bỏ qua slide đầu tiên trong việc đếm
-        // Ví dụ: slide 2 sẽ là "1 / 10"
+    if (counterElement) {
+        // We show the "page number" starting from slide 2. index.html is the title page.
+        if (currentIndex > 0) {
+            counterElement.textContent = `${currentIndex} / ${slides.length - 1}`;
+        }
     }
-    // Nếu là slide đầu tiên, counterElement sẽ không được điền gì cả và vẫn trống.
-
 
     function goToNextSlide() {
         if (currentIndex < slides.length - 1) {
@@ -32,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Keyboard navigation
     document.addEventListener('keydown', (event) => {
         if (event.key === 'ArrowRight' || event.key === ' ') {
             event.preventDefault();
@@ -42,28 +52,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Button navigation
     const prevButton = document.getElementById('prev-slide');
     const nextButton = document.getElementById('next-slide');
 
     if (prevButton) {
-        prevButton.addEventListener('click', goToPrevSlide);
-        if (currentIndex > 0) {
+        if (currentIndex === 0) {
+            prevButton.style.display = 'none';
+        } else {
             prevButton.href = slides[currentIndex - 1];
         }
     }
     
     if (nextButton) {
-        nextButton.addEventListener('click', goToNextSlide);
-        if (currentIndex < slides.length - 1) {
+        if (currentIndex === slides.length - 1) {
+            nextButton.style.display = 'none';
+        } else {
             nextButton.href = slides[currentIndex + 1];
         }
-    }
-    
-    if (currentIndex === 0 && prevButton) {
-        prevButton.style.display = 'none';
-    }
-
-    if (currentIndex === slides.length - 1 && nextButton) {
-        nextButton.style.display = 'none';
     }
 });

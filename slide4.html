@@ -1,87 +1,63 @@
-<!-- SLIDE: System Model & Formulation -->
+<!-- SLIDE: Methodology Overview -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System Model & Formulation</title>
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <title>Methodology Overview</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Segoe+UI:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-
 </head>
+<body>
+    <div class="slide-canvas antialiased bg-white flex flex-col p-12 relative">
+        <h1 class="text-4xl font-bold text-center" style="color: #003366;">Methodology Overview</h1>
+        <div class="w-24 h-1.5 mt-3 mx-auto" style="background-color: #2196F3;"></div>
 
-<body> <!-- Thẻ body không còn class -->
-    <div class="slide-canvas antialiased bg-gray-100 flex flex-col justify-center items-center p-12 relative">
-        <h1 class="text-4xl font-bold" style="color: #003366;">System Model & Formulation</h1>
-        <p class="text-xl text-gray-600 mt-2">Selecting the best clients by balancing three key metrics.</p>
-
-        <div class="flex-grow flex flex-col justify-center items-center">
-            <h2 class="text-3xl font-bold text-center mb-6">The Client Scoring Function (Φ)</h2>
-            <div class="p-6 bg-white rounded-xl shadow-lg text-center font-mono text-3xl" style="color: #003366;">
-                Φᵢ = α·âᵢ + β·bᵢ - γ·dᵢ
-            </div>
-            <div class="mt-10 grid grid-cols-3 gap-8 w-full max-w-6xl">
-                <!-- Accuracy -->
-                <div class="text-center p-6 bg-white rounded-lg shadow-md">
-                    <i class="fas fa-bullseye text-5xl" style="color: #2196F3;"></i>
-                    <h3 class="text-2xl font-bold mt-4" style="color: #003366;">α · Accuracy (âᵢ)</h3>
-                    <p class="text-lg mt-2 text-gray-700">Prioritizes clients that contribute most to model performance.
-                    </p>
+        <div class="flex-grow flex flex-col justify-center items-center mt-10">
+            <div class="flex items-center space-x-4 w-full">
+                <!-- Step 1 -->
+                <div class="flex-1 text-center p-6 bg-gray-50 rounded-xl shadow-md">
+                    <i class="fas fa-database text-5xl mb-3" style="color: #2196F3;"></i>
+                    <h3 class="text-xl font-bold">1. Dataset</h3>
+                    <p class="text-gray-600">Utilize 69x69 QR dataset from Trad & Chehab [1]. Normalize and augment images.</p>
                 </div>
-                <!-- Bandwidth -->
-                <div class="text-center p-6 bg-white rounded-lg shadow-md">
-                    <i class="fas fa-wifi text-5xl" style="color: #2196F3;"></i>
-                    <h3 class="text-2xl font-bold mt-4" style="color: #003366;">β · Bandwidth (bᵢ)</h3>
-                    <p class="text-lg mt-2 text-gray-700">Favors clients with faster connections to reduce transmission
-                        time.</p>
+                <i class="fas fa-arrow-right text-4xl text-gray-300"></i>
+                <!-- Step 2 -->
+                <div class="flex-1 text-center p-6 bg-gray-50 rounded-xl shadow-md">
+                    <i class="fas fa-cogs text-5xl mb-3" style="color: #FFC107;"></i>
+                    <h3 class="text-xl font-bold">2. Feature Extraction</h3>
+                    <p class="text-gray-600">Create a hybrid feature pipeline for XGBoost (Image-based, Metadata, URL-based).</p>
                 </div>
-                <!-- Delay -->
-                <div class="text-center p-6 bg-white rounded-lg shadow-md">
-                    <i class="fas fa-stopwatch text-5xl" style="color: #2196F3;"></i>
-                    <h3 class="text-2xl font-bold mt-4" style="color: #003366;">γ · Delay (dᵢ)</h3>
-                    <p class="text-lg mt-2 text-gray-700">Penalizes clients with high latency to minimize round-trip
-                        time.</p>
+                <i class="fas fa-arrow-right text-4xl text-gray-300"></i>
+                <!-- Step 3 -->
+                <div class="flex-1 text-center p-6 bg-gray-50 rounded-xl shadow-md">
+                    <i class="fas fa-sitemap text-5xl mb-3" style="color: #4CAF50;"></i>
+                    <h3 class="text-xl font-bold">3. Model Training</h3>
+                    <p class="text-gray-600">Train three models: Vanilla CNN, Residual CNN (on images), and XGBoost (on features).</p>
+                </div>
+                 <i class="fas fa-arrow-right text-4xl text-gray-300"></i>
+                <!-- Step 4 -->
+                 <div class="flex-1 text-center p-6 bg-gray-50 rounded-xl shadow-md">
+                    <i class="fas fa-chart-line text-5xl mb-3" style="color: #F44336;"></i>
+                    <h3 class="text-xl font-bold">4. Evaluation</h3>
+                    <p class="text-gray-600">Compare models on ROC-AUC, Accuracy, F1. Test robustness against perturbations.</p>
                 </div>
             </div>
-            <div class="mt-8 p-4 bg-blue-100 border-l-4 border-blue-500 text-center w-full max-w-6xl">
-                <p class="text-xl text-blue-800">The goal is to <strong class="font-bold">maximize the total
-                        score</strong> across selected clients while staying within a maximum total delay per round
-                    (Tₘₐₓ).</p>
+            <div class="mt-12 w-full p-4 text-center bg-blue-50 rounded-lg">
+                <p class="text-xl text-gray-800">The entire process is designed to find a model that is both <em class="italic">accurate</em> and <em class="italic">resilient</em> to real-world image degradation.</p>
             </div>
         </div>
-
+        
         <div class="slide-footer">
-            <!-- Phần tử bên trái -->
-            <div class="w-1/4 text-left">Phuc Hao Do</div>
-
-            <!-- Phần tử ở giữa -->
-            <div class="w-1/2 text-center">Bonch-Bruevich Saint-Petersburg State University of Telecommunications</div>
-
-            <!-- Phần tử bên phải (sẽ được JS điền số trang vào) -->
+            <div class="w-1/4 text-left">Robust Quishing Detection</div>
+            <div class="w-1/2 text-center">Conference Presentation</div>
             <div id="slide-counter" class="w-1/4 text-right"></div>
         </div>
     </div>
-    <!-- === BẮT ĐẦU ĐOẠN MÃ THÊM VÀO === -->
-
-    <!-- Các nút điều hướng và script nằm ngoài canvas -->
-    <a id="prev-slide"
-        class="fixed left-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50"
-        href="#">
-        <i class="fas fa-chevron-left text-6xl"></i>
-    </a>
-    <a id="next-slide"
-        class="fixed right-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50"
-        href="#">
-        <i class="fas fa-chevron-right text-6xl"></i>
-    </a>
+    <a id="prev-slide" class="nav-button left-0"><i class="fas fa-chevron-left"></i></a>
+    <a id="next-slide" class="nav-button right-0"><i class="fas fa-chevron-right"></i></a>
     <script src="navigation.js" defer></script>
-
-
 </body>
-
 </html>

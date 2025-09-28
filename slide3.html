@@ -1,42 +1,77 @@
+<!-- SLIDE: Problem & Research Gap -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proposed Solution: SCA Execution Flow</title>
+    <title>Problem Statement & Research Gap</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Segoe+UI:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <div class="slide-canvas antialiased bg-white flex flex-col p-16">
-        <h1 class="text-4xl font-bold" style="color: #003366;">Proposed Solution: The SCA Execution Flow</h1>
-        <p class="text-xl text-gray-600 mt-2">A multi-objective optimization approach to client selection for each round
-            of training.</p>
+    <div class="slide-canvas antialiased bg-white flex flex-col p-12 relative">
+        <h1 class="text-4xl font-bold text-center" style="color: #003366;">Problem Statement & Research Gap</h1>
+        <div class="w-24 h-1.5 mt-3 mx-auto" style="background-color: #2196F3;"></div>
 
-        <div class="flex-grow flex items-center justify-center mt-4 overflow-hidden">
-            <!-- ĐÃ CẬP NHẬT: Thêm class 'object-contain' để đảm bảo ảnh vừa vặn -->
-            <img src="images/flowchart.png" alt="SCA Execution Flow Diagram" class="w-full h-full object-contain">
+        <div class="flex-grow mt-10 space-y-8">
+            <div class="flex items-start">
+                <div class="w-1/3 text-right pr-8">
+                    <h2 class="text-2xl font-bold text-gray-800">Problem Formulation</h2>
+                    <p class="text-gray-600">Binary classification of 69x69 QR codes (malicious vs. benign).</p>
+                </div>
+                <div class="w-2/3 grid grid-cols-2 gap-6">
+                    <div class="bg-gray-100 p-4 rounded-lg flex items-center">
+                        <i class="fas fa-bullseye text-4xl mr-4 text-blue-500"></i>
+                        <div>
+                            <h3 class="font-bold text-lg">Primary Metric</h3>
+                            <p>ROC-AUC</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-lg flex items-center">
+                        <i class="fas fa-trophy text-4xl mr-4 text-green-500"></i>
+                        <div>
+                            <h3 class="font-bold text-lg">Target</h3>
+                            <p>ROC-AUC ≥ 0.93 (surpassing baseline 0.9133)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-8"/>
+
+            <div class="flex items-start">
+                <div class="w-1/3 text-right pr-8">
+                    <h2 class="text-2xl font-bold text-gray-800">Research Gap</h2>
+                    <p class="text-gray-600">Existing methods have limitations.</p>
+                </div>
+                <div class="w-2/3 grid grid-cols-1 gap-4">
+                    <div class="bg-red-50 p-4 rounded-lg flex items-center">
+                        <i class="fas fa-layer-group text-2xl mr-4 text-red-500"></i>
+                        <p class="text-lg">Lack of <em class="italic">unified feature pipelines</em> for low-resolution QR codes.</p>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded-lg flex items-center">
+                        <i class="fas fa-shield-alt text-2xl mr-4 text-red-500"></i>
+                        <p class="text-lg">Need for architectures with <em class="italic">robustness</em> to real-world distortions.</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
+        <div class="mt-8 text-center p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
+            <h3 class="text-xl font-bold" style="color: #003366;">Our Contribution:</h3>
+            <p class="text-lg text-gray-700 mt-2">Propose a hybrid feature pipeline and evaluate robust models (Residual CNNs) against Vanilla CNNs and XGBoost.</p>
+        </div>
+        
         <div class="slide-footer">
-            <div class="w-1/4 text-left">Phuc Hao Do</div>
-            <div class="w-1/2 text-center">Bonch-Bruevich Saint-Petersburg State University of Telecommunications</div>
+            <div class="w-1/4 text-left">Robust Quishing Detection</div>
+            <div class="w-1/2 text-center">Conference Presentation</div>
             <div id="slide-counter" class="w-1/4 text-right"></div>
         </div>
     </div>
-    <a id="prev-slide"
-        class="fixed left-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50"
-        href="#"><i class="fas fa-chevron-left text-6xl"></i></a>
-    <a id="next-slide"
-        class="fixed right-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50"
-        href="#"><i class="fas fa-chevron-right text-6xl"></i></a>
+    <a id="prev-slide" class="nav-button left-0"><i class="fas fa-chevron-left"></i></a>
+    <a id="next-slide" class="nav-button right-0"><i class="fas fa-chevron-right"></i></a>
     <script src="navigation.js" defer></script>
 </body>
-
 </html>
